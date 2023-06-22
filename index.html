@@ -27,7 +27,7 @@
             >
           </li>
           <li>
-            <a class="link-nv" href="">Agencja</a>
+            <a class="link-nv nav-active" href="./index.html">Agencja</a>
           </li>
           <li>
             <a class="link-nv" href="./portfolio.html">Portfolio</a>
@@ -57,12 +57,14 @@
       </nav>
     </header>
     <main>
-      <div class="container title">
-        <h1 class="title-logo">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-        <button class="button-logo">Zamów usługe</button>
+      <div class="title">
+        <h1>EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
+        <button type="button" class="title-logo" data-modal-open>
+          Zamów usługę
+        </button>
       </div>
       <div>
-        <ul class="container lorem-one">
+        <ul class="section container lorem-one">
           <li>
             <div class="background-icons-index">
               <svg class="icon-antenna" width="66px" height="70px">
@@ -117,14 +119,17 @@
         <div class="container">
           <h2 class="one-title">Czym się zajmujemy</h2>
           <ul class="image-one">
-            <li>
+            <li class="img-list">
               <img src="images/img1.jpg" alt="1" width="370" height="294" />
+              <p class="img-description">Aplikacje komputerowe</p>
             </li>
-            <li>
+            <li class="img-list">
               <img src="images/img2.jpg" alt="2" width="370" height="294" />
+              <p class="img-description">Aplikacje mobilne</p>
             </li>
-            <li>
+            <li class="img-list">
               <img src="images/img3.jpg" alt="3" width="370" height="294" />
+              <p class="img-description">Rozwiązania graficzne</p>
             </li>
           </ul>
         </div>
@@ -372,5 +377,15 @@
         </ul>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="close-btn" data-modal-close>
+          <svg width="17px" height="17px">
+            <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

@@ -4,6 +4,8 @@
   --color-text-secondary: #ffffff;
   --color-text-info: #757575;
   --selected-text: #2196f3;
+  --default-time: 250ms;
+  --default-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -27,6 +29,17 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-weight: 900;
+  font-size: 4.4rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  width: 696px;
+  top: 280px;
+  margin: 0 auto;
+}
+
 .section {
   padding-block: 94px;
 }
@@ -44,6 +57,8 @@ a {
   align-items: center;
   justify-content: space-between;
   letter-spacing: 0.02em;
+  margin-top: 16px;
+  margin-bottom: 14px;
 }
 
 .nv {
@@ -65,6 +80,7 @@ a {
   font-weight: 700;
   font-size: 26px;
   margin-right: 70px;
+  margin-top: 60px;
 }
 
 .weblogo {
@@ -76,6 +92,22 @@ a {
   font-size: 14px;
   line-height: 1.14;
   color: #212121;
+}
+
+.nav-active {
+  position: relative;
+  display: flex;
+  color: var(--selected-text);
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  background: var(--selected-text);
+  width: 100%;
+  height: 4px;
+  top: 44px;
+  border-radius: 2px;
 }
 
 .link-kl {
@@ -131,48 +163,74 @@ a {
 }
 
 .title {
-  margin-bottom: 94px;
-  width: 1600px;
+  height: 600px;
+  background-color: #2f303a;
+  padding: 200px 452px 280px 452px;
   text-align: center;
-  background: #2f303a;
-  padding: 200px 452px 200px 452px;
+  text-transform: uppercase;
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
     url("../images/header-index.jpg");
+  background-size: cover;
+  border: 1px solid #000000;
 }
 
 .title-logo {
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  color: #ffffff;
-  letter-spacing: 0.06em;
-  text-align: center;
-  text-transform: uppercase;
-  max-width: 696px;
-  margin: 0 0 30px 0;
-}
-
-.button-logo {
   cursor: pointer;
-  display: flex;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.9;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  background-color: var(--selected-text);
   width: 200px;
   height: 50px;
-  margin-left: 270px;
-
-  background: #2196f3;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
   border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  color: #ffffff;
-  max-width: 200px;
-  height: 50px;
-  padding: 10px 40px;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 400ms;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--background);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--background);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+  /* visibility: hidden; */
 }
 
 .lorem-one {
@@ -207,6 +265,27 @@ a {
   margin-top: 50px;
   display: flex;
   gap: 30px;
+}
+
+.img-list {
+  position: relative;
+}
+
+.img-description {
+  position: absolute;
+  bottom: -12px; /* chciałam 0 ale nie było wtedy tego cienia od dołu i nie wiem czy w taki sposób ok */
+  width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  color: var(--color-text-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .ourpeoples {
@@ -326,11 +405,10 @@ a {
 
 .fotki {
   display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  gap: 25px;
-  margin-bottom: 94px;
-  margin-top: 15px;
+  flex-wrap: wrap; /* ustawia odstęp między wierszami i kolumnami */
+  justify-content: space-evenly;
+  gap: 30px;
+  padding: 0;
 }
 
 .backfocus:hover,
@@ -340,9 +418,42 @@ a {
   cursor: pointer;
 }
 
-.fotoblock {
-  display: block;
-  max-width: 100%;
+.backfocus {
+  flex-basis: calc((100% - 90px) / 3); /* ustawia szerokość elementów */
+  background-color: var(--background);
+}
+
+.card-portfolio {
+  display: grid; /* usunęło przerwę między obrazkiem a białym tłem z tekstem poniżej */
+  margin: 0;
+  width: 370px;
+}
+
+.box-to-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
+}
+
+.overlay p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--color-text-secondary);
+  margin: 49px 45px 49px 24px;
+}
+.card-portfolio:hover .overlay {
+  transform: translateY(0);
 }
 
 .name-one {
@@ -491,6 +602,7 @@ a {
 }
 
 .icons-list-footer {
+  cursor: pointer;
   width: 44px;
   height: 44px;
   border-radius: 50%;
