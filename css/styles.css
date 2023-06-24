@@ -135,6 +135,8 @@ h1 {
 .link-phone:hover,
 .link-phone:focus {
   color: #2196f3;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .link-phone:hover .envelope-icon,
@@ -142,11 +144,15 @@ h1 {
 .link-phone:hover .smartphone-icon,
 .link-phone:focus .smartphone-icon {
   fill: #2196f3;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .link-kl:hover,
 .link-kl:focus {
   color: #2196f3;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .link-kl:hover .envelope-icon,
@@ -154,12 +160,16 @@ h1 {
 .link-kl:hover .smartphone-icon,
 .link-kl:focus .smartphone-icon {
   fill: #2196f3;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .link-nv:hover,
 .link-nv:focus,
 .pointer:hover {
   color: #2196f3;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .title {
@@ -526,6 +536,8 @@ h1 {
   background-color: #2196f3;
   fill: #ffffff;
   stroke: #ffffff;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .team-icons-four:hover .icon-color {
@@ -611,4 +623,6 @@ h1 {
 
 .icons-list-footer:hover {
   background-color: #2196f3;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
