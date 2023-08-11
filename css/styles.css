@@ -6,6 +6,7 @@
   --selected-text: #4d5ae5;
   --default-time: 250ms;
   --default-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --iris: #4d5ae5;
 }
 
 html {
@@ -234,8 +235,8 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
+  width: 408px;
+  height: 584px;
   background-color: var(--background);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -243,15 +244,20 @@ h1 {
 }
 .close-btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 26px;
-  height: 26px;
-  background-color: var(--background);
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  cursor: pointer;
 }
+
+.centerx-one {
+  position: relative;
+  margin-top: 3px;
+}
+
 .is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -332,12 +338,12 @@ h1 {
 
 .fantastic-four {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .backg {
   background: #ffffff;
-  border-radius: 0px 0px 4px 4px;
+  width: 300px;
 }
 
 .nameone {
@@ -409,15 +415,16 @@ h1 {
 }
 
 .pointer {
+  color: var(--iris);
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.63;
-  background: #f5f4fa;
+  line-height: 24px;
+  background: #f4f4fd;
   border-radius: 4px;
-  border: #f5f4fa;
+  border: 1px solid #e7e9fc;
   margin-bottom: 25.5px;
-  padding: 4px 16px 4px 16px;
+  padding: 12px 24px 12px 24px;
 }
 
 .flexo button:hover,
@@ -442,6 +449,8 @@ h1 {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .backfocus {
@@ -452,7 +461,8 @@ h1 {
 .card-portfolio {
   display: grid; /* usunęło przerwę między obrazkiem a białym tłem z tekstem poniżej */
   margin: 0;
-  width: 370px;
+  width: 360px;
+  height: 420px;
 }
 
 .box-to-overlay {
@@ -480,6 +490,8 @@ h1 {
 }
 .card-portfolio:hover .overlay {
   transform: translateY(0);
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 .name-one {
@@ -550,7 +562,7 @@ h1 {
 .team-icons-four:focus {
   stroke: #ffffff;
   cursor: pointer;
-  background-color: #2196f3;
+  background-color: #404bbf;
   fill: #ffffff;
   stroke: #ffffff;
   transition-duration: var(--default-time);
@@ -559,6 +571,8 @@ h1 {
 
 .team-icons-four:hover .icon-color {
   fill: #ffffff;
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 
 /*=============================================*/
@@ -593,10 +607,15 @@ h1 {
 .clients:focus {
   cursor: pointer;
   border: 1px solid var(--selected-text);
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
+
 .clients:hover .svg-clients-logo,
 .clients:focus .svg-clients-logo {
   fill: var(--selected-text);
+  transition-duration: var(--default-time);
+  transition-timing-function: var(--default-timing-function);
 }
 /*=============================================*/
 .socjal-title {
@@ -631,7 +650,7 @@ h1 {
 }
 
 .icons-list-footer:hover {
-  background-color: #2196f3;
+  background-color: #31d0aa;
   transition-duration: var(--default-time);
   transition-timing-function: var(--default-timing-function);
 }
