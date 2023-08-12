@@ -254,8 +254,7 @@ h1 {
 }
 
 .centerx-one {
-  position: relative;
-  margin-top: 3px;
+  margin: 3px 0px 0px 0px;
 }
 
 .is-hidden {
@@ -347,18 +346,24 @@ h1 {
 }
 
 .nameone {
+  font-size: 20px;
+  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
+  line-height: 24px; /* 120% */
+  letter-spacing: 0.4px;
   text-align: center;
+  margin: 32px 0px 8px 0px;
 }
 
 .working {
-  font-weight: 400;
+  color: #434455;
   font-size: 16px;
-  line-height: 1.19;
-  color: #757575;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.32px;
   text-align: center;
+  margin: 0px 0px 8px 0px;
 }
 
 .footer-bg {
@@ -462,7 +467,6 @@ h1 {
   display: grid; /* usunęło przerwę między obrazkiem a białym tłem z tekstem poniżej */
   margin: 0;
   width: 360px;
-  height: 420px;
 }
 
 .box-to-overlay {
@@ -540,15 +544,15 @@ h1 {
 
 .icons-team-index {
   display: flex;
-  gap: 10px;
+  gap: 24px;
   justify-content: center;
   padding: 0;
   margin-bottom: 30px;
 }
 
 .team-icons-four {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
 }
@@ -590,8 +594,8 @@ h1 {
   gap: 30px;
 }
 .clients {
-  width: 170px;
-  height: 92px;
+  width: 168px;
+  height: 88px;
   background-color: var(--background);
   display: flex;
   justify-content: center;
@@ -602,21 +606,18 @@ h1 {
 /* ===== ICONS ==== */
 .svg-clients-logo {
   fill: #afb1b8;
+  margin-top: 8px;
 }
 .clients:hover,
 .clients:focus {
   cursor: pointer;
-  border: 1px solid var(--selected-text);
-  transition-duration: var(--default-time);
-  transition-timing-function: var(--default-timing-function);
+  border: 1px solid var(--iris);
 }
-
 .clients:hover .svg-clients-logo,
 .clients:focus .svg-clients-logo {
-  fill: var(--selected-text);
-  transition-duration: var(--default-time);
-  transition-timing-function: var(--default-timing-function);
+  fill: var(--iris);
 }
+
 /*=============================================*/
 .socjal-title {
   color: #ffffff;
@@ -650,6 +651,7 @@ h1 {
 }
 
 .icons-list-footer:hover {
+  cursor: pointer;
   background-color: #31d0aa;
   transition-duration: var(--default-time);
   transition-timing-function: var(--default-timing-function);
