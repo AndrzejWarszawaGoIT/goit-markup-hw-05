@@ -399,15 +399,115 @@
             </li>
           </ul>
         </div>
+        <div class="footer-subscribe">
+          <p class="footer-subscribe-title">Subscribe</p>
+          <form name="subscribe-form" class="subscribe-form">
+            <input
+              class="email-input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              required
+            />
+            <button class="subscribe-button" type="submit">
+              <span>Subscribe</span>
+              <svg width="24" height="24">
+                <use href="./images/icons.svg#icon-Frame-3" />
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+    <!--okno modalne-->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="close-btn" data-modal-close>
-          <svg class="centerx-one" width="12px" height="12px">
+          <svg class="centerx-one" width="16px" height="16px">
             <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
           </svg>
         </button>
+        <p class="order-form-name">
+          Leave your contacts and we will call you back
+        </p>
+        <!--Name-->
+        <label for="user-name-one" class="form-label">Name</label>
+        <div class="order_position">
+          <svg width="18px" height="18px" class="order-form-icon">
+            <use href="./images/icons.svg#icon-person-black-18dp-1"></use>
+          </svg>
+          <input
+            id="user-name"
+            name="user-name"
+            class="order_name"
+            pattern="^[A-Za-z\s\-']{1,50}$"
+            required
+          />
+        </div>
+        <!--Phone-->
+        <label for="user-name-one" class="form-label-one">Phone</label>
+        <div class="order_position">
+          <svg width="18px" height="24px" class="order-form-icon-one">
+            <use href="./images/icons.svg#icon-phone-black-18dp-1"></use>
+          </svg>
+          <input
+            type="number"
+            name="phone_number"
+            required
+            type="tel"
+            name="phone_number"
+            id="user-phone"
+            name="user-phone"
+            class="order_name"
+            required
+          />
+        </div>
+        <!--Email-->
+        <label for="user-name-one" class="form-label-two">Email</label>
+        <div class="order_position">
+          <svg width="18px" height="24px" class="order-form-icon-two">
+            <use href="./images/icons.svg#icon-email-black-18dp-1"></use>
+          </svg>
+          <input
+            id="user-email"
+            name="user-email"
+            class="order_name"
+            required
+          />
+        </div>
+        <!--Comment -->
+        <label for="comment" class="form-label">Comment</label>
+        <div class="order_position">
+          <textarea
+            id="comment"
+            name="comment"
+            placeholder="Text input"
+            style="resize: none"
+            spellcheck="true"
+            class="order-form-textarea"
+          ></textarea>
+        </div>
+        <!-- Checkbox - agreements -->
+        <label for="user-agreements" class="checkbox">
+          <input
+            id="user-agreements"
+            type="checkbox"
+            name="policy"
+            class="checkbox-input"
+            required
+          />
+          <div class="checkbox-icon">
+            <svg class="checkbox-icon-tick" width="16px" height="16px">
+              <use href="./images/icons.svg#icon-checkbox"></use>
+            </svg>
+            <p class="checkbox-text">
+              I accept the terms and conditions of the
+              <a href="#" class="checkbox-links"> Privacy Policy</a>
+            </p>
+          </div>
+        </label>
+        <!-- Button -->
+        <button type="submit" class="order-button">Send</button>
       </div>
     </div>
     <script src="./js/modal.js"></script>
